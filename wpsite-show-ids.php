@@ -1,71 +1,84 @@
 <?php
 /*
-Plugin Name: WPsite Show IDs BETA
-plugin URI:
-Description:
-version: 0.9
+Plugin Name: WPsite Show IDs
+plugin URI: http://wpsite.net/wpsite-show-ids
+Description: Show IDs on all post, page and taxonomy pages.
+version: 1.0
 Author: WPSITE.NET
 Author URI: http://wpsite.net
 License: GPL2
 */
 
 // Hooks + Filters
-
-add_action('admin_init', array('WPSiteShowIDs', 'add_ids'));
 add_action( 'admin_head', array('WPSiteShowIDs', 'add_css'));
+
+// For Post Management
+add_filter( 'manage_posts_columns', array('WPSiteShowIDs', 'add_column') );
+add_action( 'manage_posts_custom_column', array('WPSiteShowIDs', 'add_value'), 10, 2 );
+
+// For Page Management
+add_filter( 'manage_pages_columns', array('WPSiteShowIDs', 'add_column') );
+add_action( 'manage_pages_custom_column', array('WPSiteShowIDs', 'add_value'), 10, 2 );
+
+// For Media Management
+add_filter( 'manage_media_columns', array('WPSiteShowIDs', 'add_column') );
+add_action( 'manage_media_custom_column', array('WPSiteShowIDs', 'add_value'), 10, 2 );
+
+// For Link Management
+add_filter( 'manage_link-manager_columns', array('WPSiteShowIDs', 'add_column') );
+add_action( 'manage_link_custom_column', array('WPSiteShowIDs', 'add_value'), 10, 2 );
+
+// For Category Management
+add_action( 'manage_edit-link-categories_columns', array('WPSiteShowIDs', 'add_column') );
+add_filter( 'manage_link_categories_custom_column', array('WPSiteShowIDs', 'add_return_value'), 10, 3 );
+
+// For Taxonmies
+
+foreach ( get_taxonomies() as $taxonomy ) {
+	if (isset($taxonomy)) {
+		add_action("manage_edit-" . $taxonomy . "_columns", array('WPSiteShowIDs', 'add_column'));
+		add_filter("manage_" . $taxonomy . "_custom_column", array('WPSiteShowIDs', 'add_return_value'), 10, 3);
+	}
+}
+
+// For User Management
+add_action( 'manage_users_columns', array('WPSiteShowIDs', 'add_column') );
+add_filter( 'manage_users_custom_column', array('WPSiteShowIDs', 'add_return_value'), 10, 3 );
+
+// For Comment Management
+add_action( 'manage_edit-comments_columns', array('WPSiteShowIDs', 'add_column') );
+add_action( 'manage_comments_custom_column', array('WPSiteShowIDs', 'add_value'), 10, 2 );
+
+add_action('admin_init', array('WPSiteShowIDs', 'custom_objects'));
 
 class WPSiteShowIDs {
 
 	/**
-	 * Hooks to 'admin_init' to show all ids
+	 * Hooks to the 'admin_init'
 	 *
 	 * @access public
 	 * @static
 	 * @return void
 	 */
-	static function add_ids() {
+	static function custom_objects() {
 
-		// For Post Management
-		add_filter( 'manage_posts_columns', array('WPSiteShowIDs', 'add_column') );
-		add_action( 'manage_posts_custom_column', array('WPSiteShowIDs', 'add_value'), 10, 2 );
+		// For Custom Taxonomies
 
-		// For Page Management
-		add_filter( 'manage_pages_columns', array('WPSiteShowIDs', 'add_column') );
-		add_action( 'manage_pages_custom_column', array('WPSiteShowIDs', 'add_value'), 10, 2 );
-
-		// For Media Management
-		add_filter( 'manage_media_columns', array('WPSiteShowIDs', 'add_column') );
-		add_action( 'manage_media_custom_column', array('WPSiteShowIDs', 'add_value'), 10, 2 );
-
-		// For Link Management
-		add_filter( 'manage_link-manager_columns', array('WPSiteShowIDs', 'add_column') );
-		add_action( 'manage_link_custom_column', array('WPSiteShowIDs', 'add_value'), 10, 2 );
-
-		// For Category Management
-		add_action( 'manage_edit-link-categories_columns', array('WPSiteShowIDs', 'add_column') );
-		add_filter( 'manage_link_categories_custom_column', array('WPSiteShowIDs', 'add_return_value'), 10, 3 );
-
-		// For Tags Management
-
-		foreach ( get_taxonomies() as $taxonomy ) {
-			add_action("manage_edit-${$taxonomy}_columns", array('WPSiteShowIDs', 'add_column'));
-			add_filter("manage_${$taxonomy}_custom_column", array('WPSiteShowIDs', 'add_return_value'), 10, 3);
+		foreach ( get_taxonomies(array('public'   => true, '_builtin' => false ), 'names') as $custom_taxonomy ) {
+			if (isset($custom_taxonomy)) {
+				add_action("manage_edit-" . $custom_taxonomy . "_columns", array('WPSiteShowIDs', 'add_column'));
+				add_filter("manage_" . $custom_taxonomy . "_custom_column", array('WPSiteShowIDs', 'add_return_value'), 10, 3);
+			}
 		}
 
 		// For Custom Post Types
 
 		foreach (get_post_types(array('public'   => true, '_builtin' => false ), 'names') as $post_type) {
-			add_action("manage_edit-${$post_type}_columns", array('WPSiteShowIDs', 'add_column'));
-			add_filter("manage_${$post_type}_custom_column", array('WPSiteShowIDs', 'add_return_value'), 10, 3);
+			if (isset($post_type)) {
+				add_action("manage_edit-". $post_type . "_columns", array('WPSiteShowIDs', 'add_column'));
+				add_filter("manage_". $post_type . "_custom_column", array('WPSiteShowIDs', 'add_return_value'), 10, 3);
+			}
 		}
-
-		// For User Management
-		add_action( 'manage_users_columns', array('WPSiteShowIDs', 'add_column') );
-		add_filter( 'manage_users_custom_column', array('WPSiteShowIDs', 'add_return_value'), 10, 3 );
-
-		// For Comment Management
-		add_action( 'manage_edit-comments_columns', array('WPSiteShowIDs', 'add_column') );
-		add_action( 'manage_comments_custom_column', array('WPSiteShowIDs', 'add_value'), 10, 2 );
 	}
 
 	/**
