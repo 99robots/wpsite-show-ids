@@ -8,17 +8,19 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The **Show IDs** plugin displays the ID of all posts, categories, pages, taxonomies, users, tags, and more.  
+The Show IDs plugin displays the ID of all posts, categories, pages, taxonomies, users, tags, and more.  
 
 == Description ==
 
 **WPsite Show ID** plugin is super light-weight and does not need any configuration or separate options page. Simply activate the plugin and IDs will be displayed on all admin pages. 
+
 * Light-weight with no options page required
 * Adds a new column on admin page to display IDs of all posts, pages, categories, and more
 * Supports custom post types and custom taxonomies
 
 = Features =
 The Show ID plugin will reveal IDs for the following: 
+
 * posts
 * pages
 * categories
