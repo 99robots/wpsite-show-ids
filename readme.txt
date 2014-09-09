@@ -14,7 +14,7 @@ The **Show IDs** plugin displays the ID of all posts, categories, pages, taxonom
 
 **WPsite Show ID** plugin is super light-weight and does not need any configuration or separate options page. Simply activate the plugin and IDs will be displayed on all admin pages. 
 * Light-weight with no options page required
-* Adds a new colum on admin page to display IDs of all posts, pages, categories, and more
+* Adds a new column on admin page to display IDs of all posts, pages, categories, and more
 * Supports custom post types and custom taxonomies
 
 = Features =
@@ -33,7 +33,7 @@ The Show ID plugin will reveal IDs for the following:
 
 == Installation ==
 
-1. Upload `wpsite-show-ids.php` to the `/wp-content/plugins/` directory
+1. Upload `wpsite-show-ids` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 You can install the **WPsite Show IDs** plugin from your WordPress Dashboard or manually via FTP. For more details, visit http://www.wpsite.net
