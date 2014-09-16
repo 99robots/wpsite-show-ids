@@ -4,34 +4,35 @@ Donate link:
 Tags: ID, show id, display id, show post id, display post id, reveal id, reveal post id, post, category, media, page, post type, post id, category id, media id, page id, post type id, comments, comment id, custom post type id, link id, show, display, reveal, taxonomy, taxonomy id, wordpress id, wp id, user, user id, tag, tag id, wp-admin
 Requires at least: 3.9
 Tested up to: 4.0
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The Show IDs plugin displays the ID of all posts, categories, pages, taxonomies, users, tags, and more.  
+The **Show IDs** plugin displays the ID of all posts, categories, pages, taxonomies, users, tags, and more.  
 
 == Description ==
 
 **WPsite Show ID** plugin is super light-weight and does not need any configuration or separate options page. Simply activate the plugin and IDs will be displayed on all admin pages. 
 
-* Light-weight with no options page required
-* Adds a new column on admin page to display IDs of all posts, pages, categories, and more
-* Supports custom post types and custom taxonomies
+* 	Light-weight with no options page required
+* 	Adds a new column on admin page to display IDs of all posts, pages, categories, and more
+* 	Supports custom post types and custom taxonomies
 
 = Features =
+
 The Show ID plugin will reveal IDs for the following: 
 
-* posts
-* pages
-* categories
-* links
-* media
-* users
-* comments
-* link categories
-* custom taxonomies
-* custom post types
-* tags
+*	posts
+*	pages
+* 	categories
+* 	tags
+* 	links
+* 	media
+* 	users
+* 	comments
+* 	link categories
+* 	custom taxonomies
+* 	custom post types
 
 == Installation ==
 
@@ -60,5 +61,8 @@ You can install the **WPsite Show IDs** plugin from your WordPress Dashboard or 
 
 == Changelog ==
 
+= 1.0.1 =
+* Minor Updates
+
 = 1.0 =
-Initial Commit
+* Initial Commit
