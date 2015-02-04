@@ -3,7 +3,7 @@
 Plugin Name: WPsite Show IDs
 plugin URI: http://wpsite.net/wpsite-show-ids
 Description: Show IDs on all post, page and taxonomy pages.
-version: 1.0.2
+version: 1.0.3
 Author: WPSITE.NET
 Author URI: http://wpsite.net
 License: GPL2
