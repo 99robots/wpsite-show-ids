@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: WPsite Show IDs
-plugin URI: http://wpsite.net/wpsite-show-ids
+Plugin Name: 99 Robots Show IDs
+plugin URI: http://99robots.com/wpsite-show-ids
 Description: Show IDs on all post, page and taxonomy pages.
-version: 1.0.3
-Author: WPSITE.NET
-Author URI: http://wpsite.net
+version: 1.0.4
+Author: 99 Robots
+Author URI: http://99robots.com
 License: GPL2
 */
 
