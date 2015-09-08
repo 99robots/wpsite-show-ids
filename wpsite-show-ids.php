@@ -3,7 +3,7 @@
 Plugin Name: 99 Robots Show IDs
 plugin URI: http://99robots.com/wpsite-show-ids
 Description: Show IDs on all post, page and taxonomy pages.
-version: 1.0.4
+version: 1.0.5
 Author: 99 Robots
 Author URI: http://99robots.com
 License: GPL2
@@ -32,15 +32,6 @@ add_action( 'manage_link_custom_column', array('WPSiteShowIDs', 'add_value'), 10
 add_action( 'manage_edit-link-categories_columns', array('WPSiteShowIDs', 'add_column') );
 add_filter( 'manage_link_categories_custom_column', array('WPSiteShowIDs', 'add_return_value'), 10, 3 );
 
-// For Taxonmies
-
-foreach ( get_taxonomies() as $taxonomy ) {
-	if (isset($taxonomy)) {
-		add_action("manage_edit-" . $taxonomy . "_columns", array('WPSiteShowIDs', 'add_column'));
-		add_filter("manage_" . $taxonomy . "_custom_column", array('WPSiteShowIDs', 'add_return_value'), 10, 3);
-	}
-}
-
 // For User Management
 add_action( 'manage_users_columns', array('WPSiteShowIDs', 'add_column') );
 add_filter( 'manage_users_custom_column', array('WPSiteShowIDs', 'add_return_value'), 10, 3 );
@@ -64,7 +55,7 @@ class WPSiteShowIDs {
 
 		// For Custom Taxonomies
 
-		foreach ( get_taxonomies(array('public'   => true, '_builtin' => false ), 'names') as $custom_taxonomy ) {
+		foreach ( get_taxonomies(array('public'   => true), 'names') as $custom_taxonomy ) {
 			if (isset($custom_taxonomy)) {
 				add_action("manage_edit-" . $custom_taxonomy . "_columns", array('WPSiteShowIDs', 'add_column'));
 				add_filter("manage_" . $custom_taxonomy . "_custom_column", array('WPSiteShowIDs', 'add_return_value'), 10, 3);
@@ -73,7 +64,7 @@ class WPSiteShowIDs {
 
 		// For Custom Post Types
 
-		foreach (get_post_types(array('public'   => true, '_builtin' => false ), 'names') as $post_type) {
+		foreach (get_post_types(array('public'   => true ), 'names') as $post_type) {
 			if (isset($post_type)) {
 				add_action("manage_edit-". $post_type . "_columns", array('WPSiteShowIDs', 'add_column'));
 				add_filter("manage_". $post_type . "_custom_column", array('WPSiteShowIDs', 'add_return_value'), 10, 3);

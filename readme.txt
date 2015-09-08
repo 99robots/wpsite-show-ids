@@ -1,10 +1,10 @@
-=== 99 Robots Show IDs ===
-Contributors: 99robots, wpsitenet
+=== Show IDs ===
+Contributors: 99robots
 Donate link:
 Tags: ID, show id, display id, show post id, display post id, reveal id, reveal post id, post, category, media, page, post type, post id, category id, media id, page id, post type id, comments, comment id, custom post type id, link id, show, display, reveal, taxonomy, taxonomy id, wordpress id, wp id, user, user id, tag, tag id, wp-admin
-Requires at least: 3.9
-Tested up to: 4.2
-Stable tag: 1.0.4
+Requires at least: 4.0
+Tested up to: 4.3
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,6 +60,9 @@ You can install the **WPsite Show IDs** plugin from your WordPress Dashboard or 
 1. IDs on the all posts page
 
 == Changelog ==
+
+= 1.0.5 =
+* FIXED: Post and Page taxonomies were not showing IDs properly on multisite installs
 
 = 1.0.4 =
 * Re-branded to 99 Robots
