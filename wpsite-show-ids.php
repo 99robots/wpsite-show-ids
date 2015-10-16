@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: 99 Robots Show IDs
-plugin URI: http://99robots.com/wpsite-show-ids
+Plugin Name: Show IDs
+plugin URI: https://99robots.com/products/show-ids/
 Description: Show IDs on all post, page and taxonomy pages.
-version: 1.0.5
+version: 1.1.0
 Author: 99 Robots
-Author URI: http://99robots.com
+Author URI: https://99robots.com
 License: GPL2
 */
 

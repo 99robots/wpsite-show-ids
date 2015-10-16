@@ -1,10 +1,10 @@
-=== Show IDs ===
-Contributors: 99robots
+=== Show IDs by 99 Robots ===
+Contributors: 99robots, kjbenk, charliepatel
 Donate link:
 Tags: ID, show id, display id, show post id, display post id, reveal id, reveal post id, post, category, media, page, post type, post id, category id, media id, page id, post type id, comments, comment id, custom post type id, link id, show, display, reveal, taxonomy, taxonomy id, wordpress id, wp id, user, user id, tag, tag id, wp-admin
 Requires at least: 4.0
-Tested up to: 4.3
-Stable tag: 1.0.5
+Tested up to: 4.3.1
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ The **Show IDs** plugin displays the ID of all posts, categories, pages, taxonom
 
 == Description ==
 
-**99 Robots Show IDs** plugin is super light-weight and does not need any configuration or separate options page. Simply activate the plugin and IDs will be displayed on all admin pages.
+**Show IDs** by 99 Robots is super light-weight and does not need any configuration or separate options page. Simply activate the plugin and IDs will be displayed on all admin pages.
 
 * 	Light-weight with no options page required
 * 	Adds a new column on admin page to display IDs of all posts, pages, categories, and more
@@ -34,17 +34,19 @@ The Show ID plugin will reveal IDs for the following:
 * 	custom taxonomies
 * 	custom post types
 
+Also please check out our other [plugins](https://99robots.com/products/?utm_source=wprepo&utm_medium=show-ids&utm_campaign=desc) :)
+
 == Installation ==
 
 1. Upload `wpsite-show-ids` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
-You can install the **WPsite Show IDs** plugin from your WordPress Dashboard or manually via FTP. For more details, visit http://www.wpsite.net
+You can install the **Show IDs** plugin from your WordPress Dashboard or manually via FTP.
 
 = From WordPress Dashboard =
 
 1. Navigate to 'Plugins -> Add New' from your WordPress dashboard.
-2. Search for `WPsite Show ID` and install it.
+2. Search for `Show IDs` and install it.
 3. Activate the plugin from Plugins menu.
 4. Thats it! There is no option configuration or page required.
 
@@ -60,6 +62,9 @@ You can install the **WPsite Show IDs** plugin from your WordPress Dashboard or 
 1. IDs on the all posts page
 
 == Changelog ==
+
+= 1.1.0 = 2015-10-16
+* UPDATED: Readme file description
 
 = 1.0.5 =
 * FIXED: Post and Page taxonomies were not showing IDs properly on multisite installs
