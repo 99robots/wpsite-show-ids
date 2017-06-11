@@ -3,7 +3,7 @@
 Plugin Name: Show IDs
 plugin URI: https://99robots.com/products/show-ids/
 Description: Show IDs on all post, page and taxonomy pages.
-version: 1.1.0
+version: 1.1.1
 Author: 99 Robots
 Author URI: https://99robots.com
 License: GPL2
