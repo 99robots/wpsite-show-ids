@@ -1,73 +1,72 @@
 <?php
-/*
-Plugin Name: Show IDs
-plugin URI: https://99robots.com/products/show-ids/
-Description: Show IDs on all post, page and taxonomy pages.
-version: 1.1.1
-Author: 99 Robots
-Author URI: https://99robots.com
-License: GPL2
-*/
+/**
+ * Plugin Name: Show IDs
+ * Plugin URI: https://99robots.com/products/show-ids/
+ * Description: Show IDs on all post, page and taxonomy pages.
+ * Version: 1.1.2
+ * Author: 99 Robots
+ * Author URI: https://99robots.com
+ * License: GPL2
+ */
 
-// Hooks + Filters
-add_action( 'admin_head', array('WPSiteShowIDs', 'add_css'));
+class WPSite_Show_IDs {
 
-// For Post Management
-add_filter( 'manage_posts_columns', array('WPSiteShowIDs', 'add_column') );
-add_action( 'manage_posts_custom_column', array('WPSiteShowIDs', 'add_value'), 10, 2 );
+	public function __construct() {
 
-// For Page Management
-add_filter( 'manage_pages_columns', array('WPSiteShowIDs', 'add_column') );
-add_action( 'manage_pages_custom_column', array('WPSiteShowIDs', 'add_value'), 10, 2 );
+		add_action( 'admin_init', array( $this, 'custom_objects' ) );
+		add_action( 'admin_head', array( $this, 'add_css' ) );
 
-// For Media Management
-add_filter( 'manage_media_columns', array('WPSiteShowIDs', 'add_column') );
-add_action( 'manage_media_custom_column', array('WPSiteShowIDs', 'add_value'), 10, 2 );
+		// For Post Management
+		add_filter( 'manage_posts_columns', array( $this, 'add_column' ) );
+		add_action( 'manage_posts_custom_column', array( $this, 'add_value' ), 10, 2 );
 
-// For Link Management
-add_filter( 'manage_link-manager_columns', array('WPSiteShowIDs', 'add_column') );
-add_action( 'manage_link_custom_column', array('WPSiteShowIDs', 'add_value'), 10, 2 );
+		// For Page Management
+		add_filter( 'manage_pages_columns', array( $this, 'add_column' ) );
+		add_action( 'manage_pages_custom_column', array( $this, 'add_value' ), 10, 2 );
 
-// For Category Management
-add_action( 'manage_edit-link-categories_columns', array('WPSiteShowIDs', 'add_column') );
-add_filter( 'manage_link_categories_custom_column', array('WPSiteShowIDs', 'add_return_value'), 10, 3 );
+		// For Media Management
+		add_filter( 'manage_media_columns', array( $this, 'add_column' ) );
+		add_action( 'manage_media_custom_column', array( $this, 'add_value' ), 10, 2 );
 
-// For User Management
-add_action( 'manage_users_columns', array('WPSiteShowIDs', 'add_column') );
-add_filter( 'manage_users_custom_column', array('WPSiteShowIDs', 'add_return_value'), 10, 3 );
+		// For Link Management
+		add_filter( 'manage_link-manager_columns', array( $this, 'add_column' ) );
+		add_action( 'manage_link_custom_column', array( $this, 'add_value' ), 10, 2 );
 
-// For Comment Management
-add_action( 'manage_edit-comments_columns', array('WPSiteShowIDs', 'add_column') );
-add_action( 'manage_comments_custom_column', array('WPSiteShowIDs', 'add_value'), 10, 2 );
+		// For Category Management
+		add_action( 'manage_edit-link-categories_columns', array( $this, 'add_column' ) );
+		add_filter( 'manage_link_categories_custom_column', array( $this, 'add_return_value' ), 10, 3 );
 
-add_action('admin_init', array('WPSiteShowIDs', 'custom_objects'));
+		// For User Management
+		add_action( 'manage_users_columns', array( $this, 'add_column' ) );
+		add_filter( 'manage_users_custom_column', array( $this, 'add_return_value' ), 10, 3 );
 
-class WPSiteShowIDs {
+		// For Comment Management
+		add_action( 'manage_edit-comments_columns', array( $this, 'add_column' ) );
+		add_action( 'manage_comments_custom_column', array( $this, 'add_value' ), 10, 2 );
+	}
 
 	/**
 	 * Hooks to the 'admin_init'
 	 *
-	 * @access public
-	 * @static
 	 * @return void
 	 */
-	static function custom_objects() {
+	public function custom_objects() {
 
 		// For Custom Taxonomies
-
-		foreach ( get_taxonomies(array('public'   => true), 'names') as $custom_taxonomy ) {
-			if (isset($custom_taxonomy)) {
-				add_action("manage_edit-" . $custom_taxonomy . "_columns", array('WPSiteShowIDs', 'add_column'));
-				add_filter("manage_" . $custom_taxonomy . "_custom_column", array('WPSiteShowIDs', 'add_return_value'), 10, 3);
+		$taxonomies = get_taxonomies( array( 'public' => true ), 'names' );
+		foreach ( $taxonomies as $custom_taxonomy ) {
+			if ( isset( $custom_taxonomy ) ) {
+				add_action( 'manage_edit-' . $custom_taxonomy . '_columns', array( $this, 'add_column' ) );
+				add_filter( 'manage_' . $custom_taxonomy . '_custom_column', array( $this, 'add_return_value' ), 10, 3 );
 			}
 		}
 
 		// For Custom Post Types
-
-		foreach (get_post_types(array('public'   => true ), 'names') as $post_type) {
-			if (isset($post_type)) {
-				add_action("manage_edit-". $post_type . "_columns", array('WPSiteShowIDs', 'add_column'));
-				add_filter("manage_". $post_type . "_custom_column", array('WPSiteShowIDs', 'add_return_value'), 10, 3);
+		$post_types = get_post_types( array( 'public' => true ), 'names' );
+		foreach ( $post_types as $post_type ) {
+			if ( isset( $post_type ) ) {
+				add_action( 'manage_edit-' . $post_type . '_columns', array( $this, 'add_column' ) );
+				add_filter( 'manage_' . $post_type . '_custom_column', array( $this, 'add_return_value' ), 10, 3 );
 			}
 		}
 	}
@@ -75,11 +74,9 @@ class WPSiteShowIDs {
 	/**
 	 * Hooks to 'admin_head'
 	 *
-	 * @access public
-	 * @static
 	 * @return void
 	 */
-	static function add_css() {
+	public function add_css() {
 		?>
 		<style type="text/css">
 			#wpsite-show-ids {
@@ -92,27 +89,25 @@ class WPSiteShowIDs {
 	/**
 	 * Adds column to edit screen
 	 *
-	 * @access public
-	 * @static
 	 * @param mixed $cols
 	 * @return void
 	 */
-	static function add_column($cols) {
+	public function add_column( $cols ) {
+
 		$cols['wpsite-show-ids'] = 'ID';
+
 		return $cols;
 	}
 
 	/**
 	 * Adds id value
 	 *
-	 * @access public
-	 * @static
 	 * @param mixed $column_name
 	 * @param mixed $id
 	 * @return void
 	 */
-	static function add_value($column_name, $id) {
-		if ( $column_name == 'wpsite-show-ids' ) {
+	public function add_value( $column_name, $id ) {
+		if ( 'wpsite-show-ids' === $column_name ) {
 			echo $id;
 		}
 	}
@@ -120,17 +115,23 @@ class WPSiteShowIDs {
 	/**
 	 * Adds id value
 	 *
-	 * @access public
-	 * @static
 	 * @param mixed $value
 	 * @param mixed $column_name
 	 * @param mixed $id
 	 * @return void
 	 */
-	static function add_return_value($value, $column_name, $id) {
-		if ( $column_name == 'wpsite-show-ids' ) {
+	public function add_return_value( $value, $column_name, $id ) {
+
+		if ( 'wpsite-show-ids' === $column_name ) {
 			$value = $id;
 		}
+
 		return $value;
 	}
 }
+
+/**
+ * Start
+ * @var WPSite_Show_IDs
+ */
+new WPSite_Show_IDs;
