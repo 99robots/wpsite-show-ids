@@ -63,7 +63,7 @@ You can install the **Show IDs** plugin from your WordPress Dashboard or manuall
 
 == Changelog ==
 
-= 1.1.2 = 2018-08-21
+= 1.1.3 = 2019-08-21
 * Made compatible with WordPress 5.2.2
 
 = 1.1.2 = 2017-06-11
