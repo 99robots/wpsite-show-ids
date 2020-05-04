@@ -3,8 +3,8 @@ Contributors: 99robots, charliepatel
 Donate link:
 Tags: ID, show id, display id, show post id, display post id, reveal id, reveal post id, post, category, media, page, post type, post id, category id, media id, page id, post type id, comments, comment id, custom post type id, link id, show, display, reveal, taxonomy, taxonomy id, wordpress id, wp id, user, user id, tag, tag id, wp-admin
 Requires at least: 4.0
-Tested up to: 5.2.2
-Stable tag: 1.1.3
+Tested up to: 5.4.1
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,8 +22,8 @@ The **Show IDs** plugin displays the ID of all posts, categories, pages, taxonom
 
 The Show ID plugin will reveal IDs for the following:
 
-*	posts
-*	pages
+*	  posts
+*	  pages
 * 	categories
 * 	tags
 * 	links
@@ -62,6 +62,9 @@ You can install the **Show IDs** plugin from your WordPress Dashboard or manuall
 1. IDs on the all posts page
 
 == Changelog ==
+
+= 1.1.4 = 2020-05-04
+* Made compatible with WordPress 5.4.1
 
 = 1.1.3 = 2019-08-21
 * Made compatible with WordPress 5.2.2
