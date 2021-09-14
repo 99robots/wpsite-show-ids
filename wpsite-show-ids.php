@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Show IDs
- * Plugin URI: https://99robots.com/products/show-ids/
+ * Plugin URI: https://draftpress.com/products
  * Description: Show IDs on all post, page and taxonomy pages.
- * Version: 1.1.7
- * Author: 99 Robots
- * Author URI: https://99robots.com
+ * Version: 1.1.8
+ * Author: DraftPress
+ * Author URI: https://draftpress.com/
  * License: GPL2
  */
 

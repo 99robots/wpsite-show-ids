@@ -1,10 +1,10 @@
-=== Show IDs by 99 Robots ===
+=== Show IDs by DraftPress ===
 Contributors: 99robots, charliepatel, DraftPress
 Donate link:
 Tags: ID, show id, display id, show post id, display post id, reveal id, reveal post id, post, category, media, page, post type, post id, category id, media id, page id, post type id, comments, comment id, custom post type id, link id, show, display, reveal, taxonomy, taxonomy id, wordpress id, wp id, user, user id, tag, tag id, wp-admin
-Requires at least: 4.0
-Tested up to: 5.7.2
-Stable tag: 1.1.7
+Requires at least: 4.9
+Tested up to: 5.8.1
+Stable tag: 1.1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ The **Show IDs** plugin displays the ID of all posts, categories, pages, taxonom
 
 == Description ==
 
-**Show IDs** by 99 Robots is super light-weight and does not need any configuration or separate options page. Simply activate the plugin and IDs will be displayed on all admin pages.
+**Show IDs** by DraftPress is super light-weight and does not need any configuration or separate options page. Simply activate the plugin and IDs will be displayed on all admin pages.
 
 * 	Light-weight with no options page required
 * 	Adds a new column on admin page to display IDs of all posts, pages, categories, and more
@@ -34,7 +34,7 @@ The Show ID plugin will reveal IDs for the following:
 * 	custom taxonomies
 * 	custom post types
 
-Also please check out our other [plugins](https://99robots.com/products/?utm_source=wprepo&utm_medium=show-ids&utm_campaign=desc) :)
+Also please check out our other [plugins](https://draftpress.com/products/?utm_source=wprepo&utm_medium=show-ids&utm_campaign=desc) :)
 
 == Installation ==
 
@@ -62,6 +62,9 @@ You can install the **Show IDs** plugin from your WordPress Dashboard or manuall
 1. IDs on the all posts page
 
 == Changelog ==
+
+= 1.1.8 = 2021-09-15
+* Made compatible with WordPress 5.8.1
 
 = 1.1.7 = 2021-05-14
 * Made compatible with WordPress 5.7.2
