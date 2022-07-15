@@ -1,9 +1,10 @@
 <?php
+
 /**
  * Plugin Name: Show IDs
  * Plugin URI: https://draftpress.com/products
  * Description: Show IDs on all post, page and taxonomy pages.
- * Version: 1.1.8
+ * Version: 1.1.9
  * Author: DraftPress
  * Author URI: https://draftpress.com/
  * License: GPL2
@@ -81,14 +82,14 @@ class WPSite_Show_IDs
      */
     public function add_css()
     {
-        ?>
-		<style type="text/css">
-			#wpsite-show-ids {
-				width: 50px;
-			}
-		</style>
-		<?php
-}
+?>
+        <style type="text/css">
+            #wpsite-show-ids {
+                width: 50px;
+            }
+        </style>
+<?php
+    }
 
     /**
      * Adds column to edit screen
