@@ -3,7 +3,7 @@
  * Plugin Name: Show IDs
  * Plugin URI: https://draftpress.com/products
  * Description: Show IDs on all post, page and taxonomy pages.
- * Version: 1.1.8
+ * Version: 1.1.9
  * Author: DraftPress
  * Author URI: https://draftpress.com/
  * License: GPL2
