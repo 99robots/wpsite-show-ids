@@ -11,7 +11,7 @@
  * 
  * @category Plugin
  * @package  ShowIDs
- * @author   DraftPress <john.doe@example.com>
+ * @author   DraftPress <support@draftpress.com>
  * @license  GNU General Public License 2 
  *           (https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
  * @link     https://draftpress.com/products
@@ -23,7 +23,7 @@
  * 
  * @category Class
  * @package  ShowIDs
- * @author   DraftPress <john.doe@example.com>
+ * @author   DraftPress <support@draftpress.com>
  * @license  GNU General Public License 2
  *          (https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
  * @link     https://draftpress.com/products
