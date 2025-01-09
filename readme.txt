@@ -1,5 +1,5 @@
 === Show IDs by DraftPress ===
-Contributor: 99robots, charliepatel, DraftPress
+Contributors: DraftPress, 99robots, charliepatel
 Donate link:
 Tags: ID, show id, display id, show post id, display post id, reveal id, reveal post id, post, category, media, page, post type, post id, category id, media id, page id, post type id, comments, comment id, custom post type id, link id, show, display, reveal, taxonomy, taxonomy id, wordpress id, wp id, user, user id, tag, tag id, wp-admin
 Requires at least: 4.9
