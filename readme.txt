@@ -62,7 +62,7 @@ You can install the **Show IDs** plugin from your WordPress Dashboard or manuall
 1. IDs on the all posts page
 
 == Changelog ==
-= 1.1.11 = 2025-01-10
+= 1.1.11 = 2025-02-10
 * Made compatible with WordPress 6.7.1
 
 = 1.1.10 = 2023-02-11
