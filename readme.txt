@@ -3,7 +3,7 @@ Contributors: DraftPress, 99robots, charliepatel
 Donate link:
 Tags: ID, show id, display id, show post id, display post id, reveal id, reveal post id, post, category, media, page, post type, post id, category id, media id, page id, post type id, comments, comment id, custom post type id, link id, show, display, reveal, taxonomy, taxonomy id, wordpress id, wp id, user, user id, tag, tag id, wp-admin
 Requires at least: 4.9
-Tested up to: 6.7.1
+Tested up to: 6.7.2
 Stable tag: 1.1.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -62,8 +62,8 @@ You can install the **Show IDs** plugin from your WordPress Dashboard or manuall
 1. IDs on the all posts page
 
 == Changelog ==
-= 1.1.11 = 2025-02-10
-* Made compatible with WordPress 6.7.1
+= 1.1.11 = 2025-03-25
+* Made compatible with WordPress 6.7.2
 
 = 1.1.10 = 2023-02-11
 * Made compatible with WordPress 6.3.2
